@@ -1,0 +1,66 @@
+<h1 id="doxygen_commenting_convention">Doxygen Commenting Convention</h1>
+
+<h2 id="comment_blocks">Comment Blocks:</h2>
+
+<h3 id="general">General:</h3>
+
+<p><code>/*! \brief Brief description.<br>
+&nbsp;*         Brief description continued.<br>
+ &nbsp;*<br>
+ &nbsp;*  Detailed description starts here.<br>
+ &nbsp;*/</code></p>
+
+<p>Detailed description continues after empty line: the \brief holds for the whole paragraph!!!</p>
+
+<h3 id="commenting_a_class">Commenting a Class:</h3>
+
+<p><code>/*! \class Test<br>
+ &nbsp;* \brief A test class.<br>
+ &nbsp;*<br>
+ &nbsp;*  A more detailed class description.<br>
+ &nbsp;*/</code></p>
+
+<h2 id="commenting_after_a_member">Commenting after a Member:</h2>
+
+<p><code>int age; //! Brief description.</code></p>
+
+<h2 id="other_usefulnesses">Other Usefulnesses:</h2>
+
+<ul>
+<li><code>\return</code>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;describe what the method / function in question returns</li>
+<li><code>\param</code>      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;describe the input parameters of a method/function</li>
+<li><code>\throws</code>     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;describe what the method/function throws when there is an error</li>
+<li><code>\invariant</code> </li>
+<li><code>\see</code>        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cross-reference other classes, functions, methods, variables etc</li>
+</ul>
+
+<h2 id="example">Example:</h2>
+
+<p><code>/*!<br>
+ &nbsp;*   \param height the height of the cylinder<br>
+ &nbsp;*   \param radius the radius of the cylinder<br>
+ &nbsp;*   \return The volume of the cylinder<br>
+ &nbsp;*   \see calculateCircleArea()<br>
+ &nbsp;*/<br>
+ double calculateCylinderVolume(double h,&nbsp;double r)&nbsp;{<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;double result(0.0); //! The volume of the cylinder<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;result = r^2*M_PI*h;<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return result;<br>
+ }</code></p>
+
+<p>The documentation and variable result here are slightly unnecessary, it&#8217;s just an example.
+ The best code doesn&#8217;t have to be commented (e.g. <br>
+<code>calculateCylinderVolume(double height, double radius)</code> <br>
+  technically speaks for itself as opposed to <br>
+<code>volume_calculation(double x, double r3)</code><br>
+   )</p>
+
+<p><h2 id="terminal_commands">Terminal Commands:</h2>
+   When in root directory (e.g. neuro-1) containing the necessary CMakeLists.txt and Doxyfile,
+   execute: <br> <br>
+   <code>cmake ./</code> (if this has not already been executed before) <br>
+   <code>make doc</code><br>
+   <code>doxygen Doxyfile</code><br></p>
+
+<p>NB. Don&#8217;t execute <code>doxygen -g</code>, as this regenerates the Doxyfile, erasing whatever
+   configuration was in there previously.</p>

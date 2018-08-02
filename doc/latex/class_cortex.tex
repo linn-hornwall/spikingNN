@@ -1,0 +1,209 @@
+\hypertarget{class_cortex}{}\section{Cortex Class Reference}
+\label{class_cortex}\index{Cortex@{Cortex}}
+
+
+The class \hyperlink{class_cortex}{Cortex} contains a neuronal network that consists of indivuals of the class \hyperlink{class_neuron}{Neuron}.  
+
+
+
+
+{\ttfamily \#include $<$Cortex.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_cortex_a1a58ad159553ce6da6fff6daa400f296}{Cortex} (double relative\+\_\+inhibitory\+\_\+amplitude, double excitatory\+\_\+amplitude, unsigned int number\+\_\+of\+\_\+neurons, bool verbose, double time\+\_\+step, std\+::poisson\+\_\+distribution$<$ int $>$ distribution, std\+::default\+\_\+random\+\_\+engine generator)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{class_cortex_a97611a2e9486cac2b13d48579db546f8}{}\label{class_cortex_a97611a2e9486cac2b13d48579db546f8} 
+\hyperlink{class_cortex_a97611a2e9486cac2b13d48579db546f8}{$\sim$\+Cortex} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_cortex_a4e5948e42a6ecb67983d235601ae8a61}{send\+\_\+spike} (std\+::vector$<$ short unsigned int $>$ const \&connection\+\_\+indexes, double amplitude)
+\begin{DoxyCompactList}\small\item\em Sends spike to other neurons. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_a4170f4ee3970170f0390bb484e4639d0}{initialize\+\_\+neurons} ()
+\begin{DoxyCompactList}\small\item\em Initializes the neurons of the \hyperlink{class_cortex}{Cortex} and their connections. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_ab6d894473b90db185847264480cc3b4d}{reset\+\_\+output\+\_\+files} ()
+\begin{DoxyCompactList}\small\item\em Reset the output files. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_a9c30099b98098f2dd3b9d2aa215ca619}{update} (int t)
+\begin{DoxyCompactList}\small\item\em Update of each neuron. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_ac87b3cbab02738737df2f556e147a294}{reset} ()
+\begin{DoxyCompactList}\small\item\em Reset of the \hyperlink{class_cortex}{Cortex}. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_acb97b9bb95b16d0dd055c94d540e1983}{save\+\_\+to\+\_\+file} (bool spiked)
+\begin{DoxyCompactList}\small\item\em Creates a file with the times of spikes. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_a477c9c5be335228690ab2c42914e73c0}{set\+\_\+spike\+\_\+sum} (int nbr)
+\begin{DoxyCompactList}\small\item\em Sets spike\+\_\+sum to nbr. \end{DoxyCompactList}\item 
+\hypertarget{class_cortex_af4c57d1e1ba16e8b2b3d693173561a4b}{}\label{class_cortex_af4c57d1e1ba16e8b2b3d693173561a4b} 
+static int \hyperlink{class_cortex_af4c57d1e1ba16e8b2b3d693173561a4b}{get\+\_\+spike\+\_\+sum} ()
+\begin{DoxyCompactList}\small\item\em Returns the value of spike\+\_\+sum\+\_\+. \end{DoxyCompactList}\item 
+\hypertarget{class_cortex_af4ecf6c791d1e0d7008fb533be3e6562}{}\label{class_cortex_af4ecf6c791d1e0d7008fb533be3e6562} 
+static void \hyperlink{class_cortex_af4ecf6c791d1e0d7008fb533be3e6562}{increment\+\_\+spike\+\_\+sum} ()
+\begin{DoxyCompactList}\small\item\em Increments the value of spike\+\_\+sum\+\_\+. \end{DoxyCompactList}\item 
+static void \hyperlink{class_cortex_a8b2714cb1ea0bea53dba545e6c1a1633}{choose\+\_\+50\+\_\+random\+\_\+neurons} ()
+\begin{DoxyCompactList}\small\item\em this function chooses 50 random neurons from the network. \end{DoxyCompactList}\item 
+\hypertarget{class_cortex_a6305ccade8ad3f3984ab3135b4d81e84}{}\label{class_cortex_a6305ccade8ad3f3984ab3135b4d81e84} 
+static double \hyperlink{class_cortex_a6305ccade8ad3f3984ab3135b4d81e84}{get\+\_\+excitatory\+\_\+amplitude} ()
+\begin{DoxyCompactList}\small\item\em Returns the excitatory amplitude. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_cortex_a40d3976594c6a2feaf7b140a2b68d265}{}\label{class_cortex_a40d3976594c6a2feaf7b140a2b68d265} 
+static double \hyperlink{class_cortex_a40d3976594c6a2feaf7b140a2b68d265}{timestep\+\_\+}
+\begin{DoxyCompactList}\small\item\em Timestep used for the simulation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class \hyperlink{class_cortex}{Cortex} contains a neuronal network that consists of indivuals of the class \hyperlink{class_neuron}{Neuron}. 
+
+\begin{DoxyAuthor}{Author}
+Neuro-\/1
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+10.\+2016
+\end{DoxyDate}
+\hyperlink{class_cortex}{Cortex} has all the neurons and organise the connections between them.
+
+\hyperlink{class_cortex}{Cortex} print also the number of spike to do the graphic. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_cortex_a1a58ad159553ce6da6fff6daa400f296}{}\label{class_cortex_a1a58ad159553ce6da6fff6daa400f296} 
+\index{Cortex@{Cortex}!Cortex@{Cortex}}
+\index{Cortex@{Cortex}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{Cortex()}{Cortex()}}
+{\footnotesize\ttfamily Cortex\+::\+Cortex (\begin{DoxyParamCaption}\item[{double}]{relative\+\_\+inhibitory\+\_\+amplitude,  }\item[{double}]{excitatory\+\_\+amplitude,  }\item[{unsigned int}]{number\+\_\+of\+\_\+neurons,  }\item[{bool}]{verbose,  }\item[{double}]{time\+\_\+step,  }\item[{std\+::poisson\+\_\+distribution$<$ int $>$}]{distribution,  }\item[{std\+::default\+\_\+random\+\_\+engine}]{generator }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em relative\+\_\+inhibitory\+\_\+amplitude} & relative amplitude of inhibitory vs. excitatory connection, a constant entered by the user \\
+\hline
+\mbox{\tt in}  & {\em excitatory\+\_\+amplitude} & the amplitude of a spike of an excitatory neuron, a constant entered by the user \\
+\hline
+\mbox{\tt in}  & {\em number\+\_\+of\+\_\+neurons} & the total number of neurons in the network, a fixed constant \\
+\hline
+\mbox{\tt in}  & {\em verbose} & indicating whether the program should print any output into the terminal \\
+\hline
+\mbox{\tt in}  & {\em time\+\_\+step} & the time step (in ms) of the \hyperlink{class_cortex}{Cortex} when updating its neurons \\
+\hline
+\mbox{\tt in}  & {\em distribution} & the Poisson distribution that will be used to model the background activity \\
+\hline
+\mbox{\tt in}  & {\em generator} & the generator used for the Poisson distribution \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_cortex_a8b2714cb1ea0bea53dba545e6c1a1633}{}\label{class_cortex_a8b2714cb1ea0bea53dba545e6c1a1633} 
+\index{Cortex@{Cortex}!choose\+\_\+50\+\_\+random\+\_\+neurons@{choose\+\_\+50\+\_\+random\+\_\+neurons}}
+\index{choose\+\_\+50\+\_\+random\+\_\+neurons@{choose\+\_\+50\+\_\+random\+\_\+neurons}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{choose\+\_\+50\+\_\+random\+\_\+neurons()}{choose\_50\_random\_neurons()}}
+{\footnotesize\ttfamily void Cortex\+::choose\+\_\+50\+\_\+random\+\_\+neurons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+this function chooses 50 random neurons from the network. 
+
+These neurons are going to be observed, and their spikes tracked and plotted. \hypertarget{class_cortex_a4170f4ee3970170f0390bb484e4639d0}{}\label{class_cortex_a4170f4ee3970170f0390bb484e4639d0} 
+\index{Cortex@{Cortex}!initialize\+\_\+neurons@{initialize\+\_\+neurons}}
+\index{initialize\+\_\+neurons@{initialize\+\_\+neurons}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{initialize\+\_\+neurons()}{initialize\_neurons()}}
+{\footnotesize\ttfamily void Cortex\+::initialize\+\_\+neurons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the neurons of the \hyperlink{class_cortex}{Cortex} and their connections. 
+
+Initializes both types of Neurons, excitatory and inhibitory
+
+Initializes the connections of each \hyperlink{class_neuron}{Neuron} \hypertarget{class_cortex_ac87b3cbab02738737df2f556e147a294}{}\label{class_cortex_ac87b3cbab02738737df2f556e147a294} 
+\index{Cortex@{Cortex}!reset@{reset}}
+\index{reset@{reset}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Cortex\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reset of the \hyperlink{class_cortex}{Cortex}. 
+
+Deletes all neurons and their connections. \hypertarget{class_cortex_ab6d894473b90db185847264480cc3b4d}{}\label{class_cortex_ab6d894473b90db185847264480cc3b4d} 
+\index{Cortex@{Cortex}!reset\+\_\+output\+\_\+files@{reset\+\_\+output\+\_\+files}}
+\index{reset\+\_\+output\+\_\+files@{reset\+\_\+output\+\_\+files}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{reset\+\_\+output\+\_\+files()}{reset\_output\_files()}}
+{\footnotesize\ttfamily void Cortex\+::reset\+\_\+output\+\_\+files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Reset the output files. 
+
+All data in the output files is deleted in order to avoid having the data of several simulations in the same file. \hypertarget{class_cortex_acb97b9bb95b16d0dd055c94d540e1983}{}\label{class_cortex_acb97b9bb95b16d0dd055c94d540e1983} 
+\index{Cortex@{Cortex}!save\+\_\+to\+\_\+file@{save\+\_\+to\+\_\+file}}
+\index{save\+\_\+to\+\_\+file@{save\+\_\+to\+\_\+file}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{save\+\_\+to\+\_\+file()}{save\_to\_file()}}
+{\footnotesize\ttfamily void Cortex\+::save\+\_\+to\+\_\+file (\begin{DoxyParamCaption}\item[{bool}]{spiked }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a file with the times of spikes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em spiked} & a boolean to know whether the neuron spiked in this timestep or not \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_cortex_a4e5948e42a6ecb67983d235601ae8a61}{}\label{class_cortex_a4e5948e42a6ecb67983d235601ae8a61} 
+\index{Cortex@{Cortex}!send\+\_\+spike@{send\+\_\+spike}}
+\index{send\+\_\+spike@{send\+\_\+spike}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{send\+\_\+spike()}{send\_spike()}}
+{\footnotesize\ttfamily void Cortex\+::send\+\_\+spike (\begin{DoxyParamCaption}\item[{std\+::vector$<$ short unsigned int $>$ const \&}]{connection\+\_\+indexes,  }\item[{double}]{amplitude }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sends spike to other neurons. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection\+\_\+indexes} & list of indexes of the neurons it\textquotesingle{}s connected to \\
+\hline
+\mbox{\tt in}  & {\em amplitude} & amplitude of the spike \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_cortex_a477c9c5be335228690ab2c42914e73c0}{}\label{class_cortex_a477c9c5be335228690ab2c42914e73c0} 
+\index{Cortex@{Cortex}!set\+\_\+spike\+\_\+sum@{set\+\_\+spike\+\_\+sum}}
+\index{set\+\_\+spike\+\_\+sum@{set\+\_\+spike\+\_\+sum}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{set\+\_\+spike\+\_\+sum()}{set\_spike\_sum()}}
+{\footnotesize\ttfamily void Cortex\+::set\+\_\+spike\+\_\+sum (\begin{DoxyParamCaption}\item[{int}]{nbr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets spike\+\_\+sum to nbr. 
+
+This function is used for testing 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nbr} & an int to set the attribute spike\+\_\+sum\+\_\+ to nbr for tests \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_cortex_a9c30099b98098f2dd3b9d2aa215ca619}{}\label{class_cortex_a9c30099b98098f2dd3b9d2aa215ca619} 
+\index{Cortex@{Cortex}!update@{update}}
+\index{update@{update}!Cortex@{Cortex}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Cortex\+::update (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Update of each neuron. 
+
+updates the sum of spikes it\textquotesingle{}s receiving, updates write\+\_\+spike\+\_\+sum\+\_\+file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & the current time \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/\+Linn/neuro-\/1/src/Cortex.\+hpp\item 
+/\+Users/\+Linn/neuro-\/1/src/Cortex.\+cpp\end{DoxyCompactItemize}

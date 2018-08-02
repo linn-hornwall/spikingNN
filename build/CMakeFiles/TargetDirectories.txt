@@ -1,0 +1,6 @@
+/Users/Linn/neuro-1/build/CMakeFiles/edit_cache.dir
+/Users/Linn/neuro-1/build/CMakeFiles/rebuild_cache.dir
+/Users/Linn/neuro-1/build/CMakeFiles/NeuronSimulation_test.dir
+/Users/Linn/neuro-1/build/CMakeFiles/test.dir
+/Users/Linn/neuro-1/build/CMakeFiles/doc.dir
+/Users/Linn/neuro-1/build/CMakeFiles/NeuronSimulation.dir

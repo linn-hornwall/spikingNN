@@ -1,0 +1,128 @@
+\hypertarget{class_neuron}{}\section{Neuron Class Reference}
+\label{class_neuron}\index{Neuron@{Neuron}}
+
+
+The class \hyperlink{class_neuron}{Neuron} receives input spikes from the \hyperlink{class_cortex}{Cortex} and sends output spikes to the \hyperlink{class_cortex}{Cortex}.  
+
+
+
+
+{\ttfamily \#include $<$Neuron.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_neuron_a8e6997ac7838c5e6ff3e961aa9d559b2}{Neuron} (double amplitude, std\+::vector$<$ unsigned short int $>$ const \&connections)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_neuron_a3c1af2530cdcbb2882ff6d86620509b1}{Neuron} (\hyperlink{class_neuron}{Neuron} const \&neuron)
+\begin{DoxyCompactList}\small\item\em Constructor of copy. \end{DoxyCompactList}\item 
+\hypertarget{class_neuron_aed19168af1c75f178ee5c606bcc8d296}{}\label{class_neuron_aed19168af1c75f178ee5c606bcc8d296} 
+double \hyperlink{class_neuron_aed19168af1c75f178ee5c606bcc8d296}{get\+\_\+amplitude} () const
+\begin{DoxyCompactList}\small\item\em Returns the value {\itshape amplitude\+\_\+} of a given neuron. \end{DoxyCompactList}\item 
+\hypertarget{class_neuron_a94a250ce7e167760e593979b899745b1}{}\label{class_neuron_a94a250ce7e167760e593979b899745b1} 
+\hyperlink{class_neuron_a94a250ce7e167760e593979b899745b1}{$\sim$\+Neuron} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_neuron_afa48309ba910b2528c036ceaae310e07}{update} (int t)
+\begin{DoxyCompactList}\small\item\em Update of the neuron. \end{DoxyCompactList}\item 
+\hypertarget{class_neuron_a9cac950fd38acce42fc348e4ed97b6ed}{}\label{class_neuron_a9cac950fd38acce42fc348e4ed97b6ed} 
+void \hyperlink{class_neuron_a9cac950fd38acce42fc348e4ed97b6ed}{sum\+\_\+input} (double input\+\_\+from\+\_\+cortex)
+\begin{DoxyCompactList}\small\item\em Sums the inputs from the \hyperlink{class_cortex}{Cortex}. \end{DoxyCompactList}\item 
+void \hyperlink{class_neuron_a741570188e5a493e183ef37a15d628e8}{notify\+\_\+cortex} (bool spike\+\_\+send)
+\begin{DoxyCompactList}\small\item\em Notifies \hyperlink{class_cortex}{Cortex} when the \hyperlink{class_neuron}{Neuron} spikes. \end{DoxyCompactList}\item 
+void \hyperlink{class_neuron_ac4d5b2ee5e8c26ecab684afa3f85ca6e}{reset\+\_\+input} ()
+\begin{DoxyCompactList}\small\item\em The \hyperlink{class_neuron}{Neuron} sets its incoming input to that sent in the previous time step. \end{DoxyCompactList}\item 
+\hypertarget{class_neuron_acdae79e598d78507694c5447cc85f0f7}{}\label{class_neuron_acdae79e598d78507694c5447cc85f0f7} 
+bool \hyperlink{class_neuron_acdae79e598d78507694c5447cc85f0f7}{is\+\_\+observed} () const
+\begin{DoxyCompactList}\small\item\em Getter for whether the neuron is observed. \end{DoxyCompactList}\item 
+\hypertarget{class_neuron_a3fab86dd8c415d68a918d0d649cf45ca}{}\label{class_neuron_a3fab86dd8c415d68a918d0d649cf45ca} 
+void \hyperlink{class_neuron_a3fab86dd8c415d68a918d0d649cf45ca}{set\+\_\+observed} (bool \hyperlink{class_neuron_acdae79e598d78507694c5447cc85f0f7}{is\+\_\+observed})
+\begin{DoxyCompactList}\small\item\em Setter for whether the neuron is observed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class \hyperlink{class_neuron}{Neuron} receives input spikes from the \hyperlink{class_cortex}{Cortex} and sends output spikes to the \hyperlink{class_cortex}{Cortex}. 
+
+\begin{DoxyAuthor}{Author}
+Neuro-\/1
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+19.\+10.\+2016
+\end{DoxyDate}
+\hyperlink{class_neuron}{Neuron} calculates its potential depending on the inputs from the \hyperlink{class_cortex}{Cortex} and according to the differential equation presented by the Brunel paper (2000).
+
+The vector of Neurons, neurons\+\_\+ (private attribut of \hyperlink{class_cortex}{Cortex}),
+
+has indexes for each \hyperlink{class_neuron}{Neuron} contained in the network. When a \hyperlink{class_neuron}{Neuron} fires a spike,
+
+the index of this \hyperlink{class_neuron}{Neuron} is saved. The \hyperlink{class_cortex}{Cortex} is in charge to send the spikes to the neurons the spiking \hyperlink{class_neuron}{Neuron} is connected to. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_neuron_a8e6997ac7838c5e6ff3e961aa9d559b2}{}\label{class_neuron_a8e6997ac7838c5e6ff3e961aa9d559b2} 
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\subsubsection{\texorpdfstring{Neuron()}{Neuron()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Neuron\+::\+Neuron (\begin{DoxyParamCaption}\item[{double}]{amplitude,  }\item[{std\+::vector$<$ unsigned short int $>$ const \&}]{connections }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initializes a \hyperlink{class_neuron}{Neuron}. The connections vector should not be empty. \hypertarget{class_neuron_a3c1af2530cdcbb2882ff6d86620509b1}{}\label{class_neuron_a3c1af2530cdcbb2882ff6d86620509b1} 
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\index{Neuron@{Neuron}!Neuron@{Neuron}}
+\subsubsection{\texorpdfstring{Neuron()}{Neuron()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Neuron\+::\+Neuron (\begin{DoxyParamCaption}\item[{\hyperlink{class_neuron}{Neuron} const \&}]{neuron }\end{DoxyParamCaption})}
+
+
+
+Constructor of copy. 
+
+It copies the value of {\itshape potential\+\_\+} and {\itshape connexion\+\_\+number\+\_\+} but not the value of {\itshape input\+\_\+} nor {\itshape last\+\_\+spike\+\_\+}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_neuron_a741570188e5a493e183ef37a15d628e8}{}\label{class_neuron_a741570188e5a493e183ef37a15d628e8} 
+\index{Neuron@{Neuron}!notify\+\_\+cortex@{notify\+\_\+cortex}}
+\index{notify\+\_\+cortex@{notify\+\_\+cortex}!Neuron@{Neuron}}
+\subsubsection{\texorpdfstring{notify\+\_\+cortex()}{notify\_cortex()}}
+{\footnotesize\ttfamily void Neuron\+::notify\+\_\+cortex (\begin{DoxyParamCaption}\item[{bool}]{spike\+\_\+send }\end{DoxyParamCaption})}
+
+
+
+Notifies \hyperlink{class_cortex}{Cortex} when the \hyperlink{class_neuron}{Neuron} spikes. 
+
+This is useful when a \hyperlink{class_neuron}{Neuron} is observed \hypertarget{class_neuron_ac4d5b2ee5e8c26ecab684afa3f85ca6e}{}\label{class_neuron_ac4d5b2ee5e8c26ecab684afa3f85ca6e} 
+\index{Neuron@{Neuron}!reset\+\_\+input@{reset\+\_\+input}}
+\index{reset\+\_\+input@{reset\+\_\+input}!Neuron@{Neuron}}
+\subsubsection{\texorpdfstring{reset\+\_\+input()}{reset\_input()}}
+{\footnotesize\ttfamily void Neuron\+::reset\+\_\+input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The \hyperlink{class_neuron}{Neuron} sets its incoming input to that sent in the previous time step. 
+
+The attribute current\+\_\+input is set to the value of next\+\_\+input, as a new timestep is beginning. next\+\_\+input is set to 0. \hypertarget{class_neuron_afa48309ba910b2528c036ceaae310e07}{}\label{class_neuron_afa48309ba910b2528c036ceaae310e07} 
+\index{Neuron@{Neuron}!update@{update}}
+\index{update@{update}!Neuron@{Neuron}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Neuron\+::update (\begin{DoxyParamCaption}\item[{int}]{t }\end{DoxyParamCaption})}
+
+
+
+Update of the neuron. 
+
+The \hyperlink{class_neuron}{Neuron} sends a spike if the current time t equals {\itshape last\+\_\+spike\+\_\+} + {\itshape T\+R\+A\+N\+S\+M\+I\+S\+S\+I\+O\+N\+\_\+\+D\+E\+L\+AY}, where last\+\_\+spike\+\_\+ is the time at which the \hyperlink{class_neuron}{Neuron} last reached the threshold potential. If the current time is larger than {\itshape last\+\_\+spike\+\_\+} + {\itshape R\+E\+F\+R\+A\+C\+T\+O\+R\+Y\+\_\+\+P\+E\+R\+I\+OD\+:} If the \hyperlink{class_neuron}{Neuron} reaches the threshold potential, it sets the potential to {\itshape R\+E\+S\+T\+I\+N\+G\+\_\+\+P\+O\+T\+E\+N\+T\+I\+AL}. If it cannot be activated, it recalculcates its potential 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t} & the current time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & detects an error if the time is negative. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/\+Linn/neuro-\/1/src/Neuron.\+hpp\item 
+/\+Users/\+Linn/neuro-\/1/src/Neuron.\+cpp\end{DoxyCompactItemize}

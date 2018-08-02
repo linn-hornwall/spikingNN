@@ -1,0 +1,66 @@
+Start testing: Dec 19 13:25 CET
+----------------------------------------------------------
+1/1 Testing: neuro_1
+1/1 Test: neuro_1
+Command: "/Users/Linn/neuro-1/build/NeuronSimulation_test"
+Directory: /Users/Linn/neuro-1/build
+"neuro_1" start time: Dec 19 13:25 CET
+Output:
+----------------------------------------------------------
+[==========] Running 17 tests from 3 test cases.
+[----------] Global test environment set-up.
+[----------] 1 test from Main_Test
+[ RUN      ] Main_Test.constants
+[       OK ] Main_Test.constants (1 ms)
+[----------] 1 test from Main_Test (1 ms total)
+
+[----------] 9 tests from Cortex_Test
+[ RUN      ] Cortex_Test.initialize_cortex
+[       OK ] Cortex_Test.initialize_cortex (0 ms)
+[ RUN      ] Cortex_Test.update
+[       OK ] Cortex_Test.update (7 ms)
+[ RUN      ] Cortex_Test.increment_spike_sum
+[       OK ] Cortex_Test.increment_spike_sum (0 ms)
+[ RUN      ] Cortex_Test.send_spike
+[       OK ] Cortex_Test.send_spike (0 ms)
+[ RUN      ] Cortex_Test.initialize_neuron_types
+[       OK ] Cortex_Test.initialize_neuron_types (0 ms)
+[ RUN      ] Cortex_Test.choose_50_random_neurons
+[       OK ] Cortex_Test.choose_50_random_neurons (0 ms)
+[ RUN      ] Cortex_Test.save_to_file
+[       OK ] Cortex_Test.save_to_file (0 ms)
+[ RUN      ] Cortex_Test.write_spike_sum_file
+[       OK ] Cortex_Test.write_spike_sum_file (0 ms)
+[ RUN      ] Cortex_Test.reset_neurons
+[       OK ] Cortex_Test.reset_neurons (0 ms)
+[----------] 9 tests from Cortex_Test (7 ms total)
+
+[----------] 7 tests from Neuron_Test
+[ RUN      ] Neuron_Test.initialize_neuron
+[       OK ] Neuron_Test.initialize_neuron (0 ms)
+[ RUN      ] Neuron_Test.activate_neuron
+[       OK ] Neuron_Test.activate_neuron (0 ms)
+[ RUN      ] Neuron_Test.reset
+[       OK ] Neuron_Test.reset (0 ms)
+[ RUN      ] Neuron_Test.calculate_potential
+[       OK ] Neuron_Test.calculate_potential (0 ms)
+[ RUN      ] Neuron_Test.sum_input
+[       OK ] Neuron_Test.sum_input (0 ms)
+[ RUN      ] Neuron_Test.update
+[       OK ] Neuron_Test.update (0 ms)
+[ RUN      ] Neuron_Test.reset_input
+[       OK ] Neuron_Test.reset_input (0 ms)
+[----------] 7 tests from Neuron_Test (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 17 tests from 3 test cases ran. (9 ms total)
+[  PASSED  ] 17 tests.
+<end of output>
+Test time =   0.03 sec
+----------------------------------------------------------
+Test Passed.
+"neuro_1" end time: Dec 19 13:25 CET
+"neuro_1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Dec 19 13:25 CET

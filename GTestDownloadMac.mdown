@@ -1,0 +1,22 @@
+<h2 id="downloading_gtest_for_mac">Downloading GTest for Mac</h2>
+
+<ol>
+<li>Download GTest <a href="https://github.com/google/googletest">here</a>, (Green button &#8220;Clone or download&#8221;).</li>
+<li>unzip the googletest-master.zip (or however your download is called)</li>
+<li>enter the googletest-master folder</li>
+<li><code>mkdir build</code></li>
+<li><code>cd build</code></li>
+<li><code>cmake -Dgtest_build_samples=ON -Dgtest_build_tests=ON /Users/Linn/Downloads/googletest-master</code></li>
+<li><code>make</code></li>
+<li><code>make test</code></li>
+<li><code>./sample1_unittest</code> <br/>(this didn&#8217;t work for me I think, shouldn&#8217;t matter)</li>
+<li><code>sudo mkdir /usr/local/Cellar/gtest</code></li>
+<li><code>sudo cp googletest-master/googlemock/googlemock/gtest/libgtest.a /usr/local/Cellar/gtest/</code>
+<br/>(if this doesn&#8217;t work you&#8217;ll have to search for the libgtest.a, in my case it was in the directory googlemock/googlemock/gtest as stated above, but some workarounds were necessary for me when installing gtest)</li>
+<li><code>sudo ln -snf /usr/local/Cellar/gtest/libgtest.a /usr/local/lib/libgtest.a</code></li>
+<li>repeat 11-12 but with &#8220;libgtest_main.a&#8221; instead of &#8220;libgtest.a&#8221;</li>
+<li><code>sudo cp -r googletest-master/googlemock/include /usr/local/Cellar/gtest/</code></li>
+<li><code>ln -snf usr/local/Cellar/gtest/include/gtest /usr/local/include/gtest</code></li>
+</ol>
+
+<p>If something doesn&#8217;t work feel free to ask, my installation process had lots of warnings and stuffens but it does appear to have been installed now. note that this is only for mac. code on!</p>
